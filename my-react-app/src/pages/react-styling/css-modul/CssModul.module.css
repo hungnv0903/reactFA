@@ -1,0 +1,71 @@
+@import "./variable.module.css" ; 
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--main-color);
+    margin-bottom: 20px;
+}
+
+:global(.main-content) {
+    .counter {
+        border-color: var(--main-color-aqua);
+    }
+    :global(.counter) {
+        color: var(--main-color);
+    }
+}
+.main-content .counter {
+    border-color: var(--main-color-aqua);
+}
+
+.button {
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: 2px dotted var(--main-color-blue);
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-color);
+    outline: none;
+    cursor: pointer;
+    color: var(--main-color-white);
+    padding: 0;
+}
+
+.button:active {
+    opacity: 0.2;
+    transform: scale(0.5);
+}
+
+.button .first {
+    border-color: var(--main-color-blueviolet);
+}
+
+.button .secondary {
+    border-color: var(--main-color-blue);
+}
+
+:global(.spanRotate) {
+    font-size: 2rem;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    animation: rotate 2s linear infinite;
+    background-color: var(--main-color-blueviolet);
+}
+
+@media (max-width : 992px) {
+    :global(.spanRotate) {
+        background-color: var(--main-color-aqua);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
